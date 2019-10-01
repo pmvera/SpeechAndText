@@ -18,8 +18,12 @@ class SpeechToText:
                 audio = r.record(source)
                 print("Recorded")
 
+        language = raw_input("In wich lenguage is the audio?(English/Spanish) ")
 
+        if language == "Spanish":
             print("Text: " + r.recognize_google(audio, language="es-ES"))
+        else:
+            print("Text: " + r.recognize_google(audio, language="en-EN"))
 
 if __name__ == '__main__':
     if len(sys.argv) == 2:
